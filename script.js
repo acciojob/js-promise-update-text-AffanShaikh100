@@ -1,14 +1,14 @@
 //your JS code here. If required.
-window.onload=()=>{
-	let div = document.getElementById("output");
-	const promise = new promise(function(resolve,reject)){
-		setTimeout(()=>{
-			resolve("Hello, world!");
-		},1000);
-	}
-
-	promise.then((value)=>{
-		div.innerHTML = value;
-	})	
-		
+function displaydata(content){
+ document.getElementById("output").textContent = content;
 }
+
+let promisefg = new Promise((resolve,reject)=>{
+	// resolve("Hello, world!");
+	setTimeout(()=>{
+		resolve("Hello, world!")
+	},1000)
+})
+
+promisefg.then((value)=>displaydata(value)).
+	catch((error)=>displaydata(error))
